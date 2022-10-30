@@ -1,5 +1,18 @@
-// Add imports above this line
-import { galleryItems } from './gallery-items';
-// Change code below this line
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+import { galleryCard } from "./galleryCard";
 
-console.log(galleryItems);
+const boxForGalleryCard = document.querySelector(".gallery");
+
+boxForGalleryCard.insertAdjacentHTML("beforeend", galleryCard);
+
+const onImageClick = (event) => {
+  event.preventDefault();
+
+  if (!event.target.classList.contains("gallery__image")) {
+    return;
+  }
+  const lightbox = new SimpleLightbox(".gallery a");
+};
+
+boxForGalleryCard.addEventListener("click", onImageClick);
