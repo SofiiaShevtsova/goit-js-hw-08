@@ -12,7 +12,7 @@ const onImageClick = (event) => {
   if (!event.target.classList.contains("gallery__image")) {
     return;
   }
-  const lightbox = new SimpleLightbox(".gallery a"б { captionsData: "alt", captionDelay: 250 });
+  const lightbox = new SimpleLightbox(".gallery a", { captionsData: "alt", captionDelay: 250 });
 };
 
 boxForGalleryCard.addEventListener("click", onImageClick);
